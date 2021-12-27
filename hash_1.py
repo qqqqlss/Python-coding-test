@@ -6,7 +6,6 @@ def solution(participant, completion):
         else:
             hs[i] +=1
             
-        
     for i in completion:
         hs[i] -=1
     
