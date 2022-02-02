@@ -9,3 +9,4 @@ brute_force_1 - enumertate 활용하면, +1되는 변수 더 쉽게 활용가능
 greedy_1 - //  
 dynamic_programming_1 - 최대한 효율적으로 줄여보기.. 리스트 변수에 변수 넣으면 주소값이 넣어짐. copy:O(N)
 dfs_bfs_1 - 전역 변수 사용시 global 선언 필요, dfs는 하나하나 끝까지 차례대로 bfs는 여러개를 높이별로 계산? 
+binary_search_1 - 범위에서 반씩 줄여가며 경우의 수를 줄임. 
