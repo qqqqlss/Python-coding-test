@@ -11,4 +11,5 @@ dynamic_programming_1 - 최대한 효율적으로 줄여보기.. 리스트 변�
 dfs_bfs_1 - 전역 변수 사용시 global 선언 필요, dfs는 하나하나 끝까지 차례대로 bfs는 여러개를 높이별로 계산? 
 binary_search_1 - 범위에서 반씩 줄여가며 경우의 수를 줄임. 
 graph_1 - for 에 _ 사용 반복만 사용시. 리스트 여러개 활용하는법. for (a,b)이런 식으로 다차원 배열 변수로 사용 pop이용해서 빼면서 값 넣음.
-hash_3 //
+hash_3 - //
+hash_4 - filter랑 lamda 활용방법, class활용 방법
