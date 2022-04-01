@@ -8,6 +8,7 @@ stack_queue_3 -
 stack_queue_4 -
 heap_1 - 최소,최대 값 구할 때는 heap이 빠름(완전이진트리의 일종으로 값을 추가하면 마지막에 넣고 값을 교환하며 완성(자동정렬)  
 heap_2 - 힙과 이차원 배열을 이용해 값 같이 이용 
+heap_3 - 최대힙 사용법(-x,x) 사용
 sort_1 - //  
 brute_force_1 - enumertate 활용하면, +1되는 변수 더 쉽게 활용가능  
 greedy_1 - //  
