@@ -10,7 +10,9 @@ heap_1 - 최소,최대 값 구할 때는 heap이 빠름(완전이진트리의 �
 heap_2 - 힙과 이차원 배열을 이용해 값 같이 이용 
 heap_3 - 최대힙 사용법(-x,x) 사용
 sort_1 - //  
-brute_force_1 - enumertate 활용하면, +1되는 변수 더 쉽게 활용가능  
+brute_force_1 - enumertate 활용하면, +1되는 변수 더 쉽게 활용가능
+brute_force_2 - 리스트 복사시 리스트의 주소가 복사되기 때문에 [:]활용해서 복사해야 값이 들어감.  
+brute_force_3 -  
 greedy_1 - //  
 dynamic_programming_1 - 최대한 효율적으로 줄여보기.. 리스트 변수에 변수 넣으면 주소값이 넣어짐. copy:O(N)
 dfs_bfs_1 - 전역 변수 사용시 global 선언 필요, dfs는 하나하나 끝까지 차례대로 bfs는 여러개를 높이별로 계산? 
