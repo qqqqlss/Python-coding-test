@@ -13,7 +13,9 @@ sort_1 - //
 brute_force_1 - enumertate 활용하면, +1되는 변수 더 쉽게 활용가능
 brute_force_2 - 리스트 복사시 리스트의 주소가 복사되기 때문에 [:]활용해서 복사해야 값이 들어감.  
 brute_force_3 -  
-greedy_1 - //  
+greedy_1 - //
+greedy_2 - //
+greedy_3 - 문자열 리스트는 인덱스 요소제거 안되서 s[x:x]+s[x:x]요런식으로 표현
 dynamic_programming_1 - 최대한 효율적으로 줄여보기.. 리스트 변수에 변수 넣으면 주소값이 넣어짐. copy:O(N)
 dfs_bfs_1 - 전역 변수 사용시 global 선언 필요, dfs는 하나하나 끝까지 차례대로 bfs는 여러개를 높이별로 계산? 
 binary_search_1 - 범위에서 반씩 줄여가며 경우의 수를 줄임. 
