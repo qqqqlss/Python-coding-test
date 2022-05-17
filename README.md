@@ -18,7 +18,10 @@ greedy_2 - //
 greedy_3 - 문자열 리스트는 인덱스 요소제거 안되서 s[x:x]+s[x:x]요런식으로 표현
 greedy_4 - 리스트 자체를 건드리는 것(pop,slicing,del)보다 인덱스를 활용해서 푸는게 훨씬 빠르다.
 greedy_5 - set을 통해 집합 생성, update를 통해 중복안되며 추가 // kruskal algorithm - 최소값 요소 부터 하고 처음값말고 둘중 하나만 들어가 있어야댐 // continue로 반복문 건너뛰기
+greedy_6 - //
 dynamic_programming_1 - 최대한 효율적으로 줄여보기.. 리스트 변수에 변수 넣으면 주소값이 넣어짐. copy:O(N)
+dynamic_programming_2
+dynamic_programming_3 - 최단경로 구하는 방법 기억
 dfs_bfs_1 - 전역 변수 사용시 global 선언 필요, dfs는 하나하나 끝까지 차례대로 bfs는 여러개를 높이별로 계산? 
 binary_search_1 - 범위에서 반씩 줄여가며 경우의 수를 줄임. 
 graph_1 - for 에 _ 사용 반복만 사용시. 리스트 여러개 활용하는법. for (a,b)이런 식으로 다차원 배열 변수로 사용 pop이용해서 빼면서 값 넣음.
