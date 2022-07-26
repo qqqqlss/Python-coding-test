@@ -55,16 +55,19 @@
 
 # 블록의 회전은 가능하지만, 뒤집을 수는 없습니다.
 
+# python
 from collections import deque
 
-def spin(block):
+d = [[-1,0],[0,1],[1,0],[0,-1]]
+
+def spin(block): #puzzle조각 90도 돌리기
 	spin_block = [[0]*len(block) for _ in range(len(block[0]))]
 	for row in range(len(block)):
 		for col in range(len(block[0])):
 			spin_block[col][len(spin_block[0])-1-row] = block[row][col]
 	return spin_block
 
-def catch_piece(table,row,col):
+def catch_piece(table,row,col): #table로 puzzle조각 추출
 	R,C = len(table),len(table)
 	piece = [[0]*C for _ in range(R)]
 	piece[row][col] = 1
@@ -82,19 +85,17 @@ def catch_piece(table,row,col):
 					q.append([r+dr,c+dc])
 
 	r_piece = []
-	for i in piece:
+	for i in piece: #가로 0제거
 		if sum(i) != 0:
 			r_piece.append(i)
 
 	r_piece = spin(r_piece)
 	c_piece = []
-	for i in r_piece:
+	for i in r_piece: #세로 0제거
 		if sum(i) != 0:
 			c_piece.append(i)
-	for _ in range(3):
-		c_piece = spin(c_piece)
 
-	return c_piece
+	return c_piece,table
 
 def compare(game_board,piece,row,col):
 	R,C = len(game_board),len(game_board)
@@ -109,6 +110,7 @@ def compare(game_board,piece,row,col):
 				return 0
 	return cnt
 
+
 def solution(game_board,table):
 	answer = 0
 	piece = deque()
@@ -116,7 +118,8 @@ def solution(game_board,table):
 	for row in range(R):
 		for col in range(C):
 			if table[row][col] == 1:
-				piece.append(catch_piece(table,row,col))
+				p,table=catch_piece(table,row,col)
+				piece.append(p)
 
 	for row in range(R):
 		for col in range(C):
