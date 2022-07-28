@@ -1,37 +1,40 @@
+# 4방향
+dij = [0, -1, 0, 1, 0]
+# 좌표계를 2배율로 늘려 구성
+rects = [[0] * 102 for _ in range(102)]
+
+
+# 모서리 판별
+def is_corner(x, y):
+    if not rects[y][x] == 1: return False
+    for i in range(y - 1, y + 2):
+        for j in range(x - 1, x + 2):
+            if not rects[i][j]: return True
+    return False
+
+
 def solution(rectangle, characterX, characterY, itemX, itemY):
-    dot=[] #둘레 좌표 순서대로 저장.
-    dot.extend(rec_to_dot(rectangle[0]))
-    
-    return find_distance(dot, characterX, characterY, itemX, itemY)
+    # 사각형 찍기
+    for square in rectangle:
+        ix, iy, ex, ey = square
+        for i in range(iy * 2, ey * 2 + 1):
+            for j in range(ix * 2, ex * 2 + 1):
+                rects[i][j] = 1
 
-def rec_to_dot(rec): #직사각형 2꼭지점 -> 4꼭지점 반환
-    return [[rec[0],rec[1]],[rec[0],rec[3]],[rec[2],rec[3]],[rec[2],rec[1]]]
+    # BFS
+    q = [(0, 0) for _ in range(800)]
+    q[0] = (characterX * 2, characterY * 2)
+    rects[q[0][1]][q[0][0]] = 2  # 사각형과 구분한 visited 처리를 위해 2 더해줌
 
-def find_distance(dot, characterX, characterY, itemX, itemY): #dot, 캐릭터, 아이템 위치 통해 최소거리 찾기.
-    dot.append(dot[0])
-    round_len=0
-    character_len=0
-    item_len=0
-    for i in range(len(dot)-1):
-        if dot[i][0]==dot[i+1][0]: #세로 직선
-            if dot[i][0]==characterX and characterY>=min(dot[i][1],dot[i+1][1]) and characterY<=max(dot[i][1],dot[i+1][1]):
-                character_len = abs(dot[i][1]-characterY) + round_len
-            if dot[i][0]==itemX and itemY>=min(dot[i][1],dot[i+1][1]) and itemY<=max(dot[i][1],dot[i+1][1]):
-                item_len = abs(dot[i][1]-itemY) + round_len
-            round_len += abs(dot[i][1]-dot[i+1][1])
-        else: #가로 직선
-            if dot[i][1]==characterY and characterX>=min(dot[i][0],dot[i+1][0]) and characterX<=max(dot[i][0],dot[i+1][0]):
-                character_len = abs(dot[i][0]-characterX) + round_len
-            if dot[i][1]==itemY and itemX>=min(dot[i][0],dot[i+1][0]) and itemX<=max(dot[i][0],dot[i+1][0]):
-                item_len = abs(dot[i][0]-itemX) + round_len
-            round_len += abs(dot[i][0]-dot[i+1][0])
-    return min(abs(item_len-character_len), round_len-abs(item_len-character_len))
+    ptr, tg = 1, 0
+    while ptr != tg:
+        qx, qy = q[tg][0], q[tg][1]
+        for k in range(4):
+            tx, ty = qx + dij[k], qy + dij[k + 1]
+            if is_corner(tx, ty):
+                q[ptr] = (tx, ty)
+                rects[ty][tx] = rects[qy][qx] + 0.5  # 2배율이므로 거리를 0.5씩 가산
+                ptr += 1
+        tg += 1
 
-def add_dot(dot, rec): #테두리 점 집합에 사각형 추가
-    
-
-            
-#직사각형 1-4개
-#x또는 y 다 다름, 포함 관계 없음
-#테두리 그리면서 사각형이랑 닿는 체크 좌표 추가.
-#사각형 안에 들어가는 좌표 다삭제
+    return rects[itemY * 2][itemX * 2] - 2  # 최종 계산에서 2를 차감
