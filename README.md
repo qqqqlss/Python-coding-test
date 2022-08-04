@@ -29,4 +29,5 @@ graph_1 - for 에 _ 사용 반복만 사용시. 리스트 여러개 활용하는
 hash_3 - //
 hash_4 - filter랑 lamda 활용방법, class활용 방법
 ** sort 는 정렬하면서 리스트를 수정, sorted는 정렬한 값만 출력 원본은 수정 x 
-    ex list_1.sort(key=lamda x:(x[1], -x[0])) // 2번째 값 오름차순 그 안에서 첫 번째 값 내림차순 정렬 
+    ex list_1.sort(key=lamda x:(x[1], -x[0])) // 2번째 값 오름차순 그 안에서 첫 번째 값 내림차순 정렬
+!! 다시 정리 필요
