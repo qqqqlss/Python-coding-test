@@ -97,7 +97,7 @@ def catch_piece(table,row,col): #table로 puzzle조각 추출
 
 	return c_piece,table
 
-def compare(game_board,piece,row,col):
+def compare(game_board,piece,row,col): #row col기준 game board에서 piece랑 비교
 	R,C = len(game_board),len(game_board)
 	cnt = 0
 	for r in range(len(piece)):
@@ -121,13 +121,13 @@ def solution(game_board,table):
 				p,table=catch_piece(table,row,col)
 				piece.append(p)
 
-	for row in range(R):
+	for row in range(R): 			#game board 시작 rowc ol
 		for col in range(C):
 			if game_board[row][col] == 0:
 				q = deque([[row,col]])
 				min_row,max_row = row,row
 				min_col,max_col = col,col
-				while q:
+				while q:	#빈칸 추출
 					r,c = q.popleft()
 					game_board[r][c] = 2
 					for i in d:
@@ -140,7 +140,7 @@ def solution(game_board,table):
 								game_board[r+dr][c+dc] = 2
 
 				result = 0
-				for p in range(len(piece)):
+				for p in range(len(piece)): #빈칸 puzzle조각과 비교
 					for _ in range(4):
 						if piece[p][0][0] == -1:
 							break
