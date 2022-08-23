@@ -1,4 +1,9 @@
 # Python-coding-test
+---
+현재 정리.  
+해쉬 폰켓몬
+
+
 use dictionary for hash in python  
 hash_1 - 딕셔너리 이용해 hash구분  key,value,items  
 hash_2 - for 문에서 딕셔너리가 리스트 보다 빠름 ! startswitch 특정문자로 사용하는 여부.  
