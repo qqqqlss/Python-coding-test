@@ -1,4 +1,10 @@
-hash_1 - 딕셔너리 이용해 hash구분  key,value,items  
-hash_2 - for 문에서 딕셔너리가 리스트 보다 빠름 ! startswitch 특정문자로 사용하는 여부.  
-hash_4 - filter랑 lamda 활용방법, class활용 방법
-** sort 는 정렬하면서 리스트를 수정, sorted는 정렬한 값만 출력 원본은 
+# 해쉬
+Key-value쌍으로 데이터를 빠르게 찾아보세요.  
+
+# 활용
+---
+폰켓몬 - 집합 set()
+완주하지 못한 선수 - items()
+전화번호 목록 - startswitch(), zip()
+위장 - 사전 dict()
+베스트앨범 - sorted, lambda, filter
