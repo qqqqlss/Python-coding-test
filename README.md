@@ -7,3 +7,4 @@ level2
 양궁대회 - 완전 탐색 문제 / 비트연산 이용한 승패 경우의수 / reversed() / 1<<5 = 100000(2진수) / 비트와 비트의 and 연산 / 경이롭다.
 주차 요금 계산 - dict 이용(sorted: key기준 정렬) / 문자열 split
 k진수에서 소수 개수 구하기 - math 안쓰고 소수 구하기 / 몫연산자:// 
+교점에 별 만들기 - combinations(조합) 사용 / list 이차원 리스트  최소 최대 구하기 / lambda정렬, reversed
