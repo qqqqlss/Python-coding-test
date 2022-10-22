@@ -8,3 +8,4 @@ https://www.techinterviewhandbook.org/grind75?weeks=8&hours=8
 03_Merge Two Sorted Lists -  연결 리스트 활용, 계속 넥스트에 바꿔가며 대입. / 파이썬에서는 필요없음.
 04_Best Time to Buy and Sell Stock - 쉬움.
 05_Valid Palindrome - isalnum 사용
+06_Invert Binary Tree - 서로 값 바꿀 때 한줄에 입력하면 됨(튜플로 인식하기 때문) ex)x,y=y,x --> temp=(x,y) // y,x=temp
