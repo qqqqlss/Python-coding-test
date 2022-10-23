@@ -11,3 +11,4 @@ https://www.techinterviewhandbook.org/grind75?weeks=8&hours=8
 06_Invert Binary Tree - 서로 값 바꿀 때 한줄에 입력하면 됨(튜플로 인식하기 때문) ex)x,y=y,x --> temp=(x,y) // y,x=temp
 07_Valid Anagram - 확실히 파이썬은 다양한 방법이 가능. dict이용하는게 가장 깔끔한거 같음. collections.Counter사용해서도 가능
 08_Binary Search - 이진탐색 이용 ( velog에 있음 ) O(logN)
+09_Flood Fill - dfs, bfs사용 4방향 탐색.
