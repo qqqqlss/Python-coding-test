@@ -19,3 +19,17 @@ def solution(distance, scope, times):
             if idx==len(scope):
                 return distance        
     return t
+
+######################## 훨씬 빠름
+def solution(distance, scope, times):
+    answer = 0
+    s = sorted(zip(scope,times),key = lambda x : min(x[0]))
+    for tmp,time in s:
+        front,back = min(tmp),max(tmp)
+        p = sum(time)
+        for x in range(front,back+1):
+            if x%p > 0 and x%p <= time[0]:
+                return x
+            else:
+                continue
+    return distance
