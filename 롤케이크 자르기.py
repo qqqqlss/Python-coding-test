@@ -3,7 +3,7 @@ def solution(topping):
     a=set()
     b=set()
     first=[]
-    for i in range(len(topping)-1,-1,-1):
+    for i in range(len(topping)-1,-1,-1): #처음나오는 요소 index
         if topping[i] not in b:
             first.append(i)
             b.add(topping[i])
