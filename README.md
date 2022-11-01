@@ -31,3 +31,4 @@ n^2 배열 자르기 - 좀더 쉽게 생각하자.
 삼각 달팽이 - while 2번, 그래프 방문, extend이용 이차원 ->일차원 리스트
 수식 최대화 - permutations 사용 // pop, insert이용 리스트 수정
 튜플 - lstrip,rstrip 사용 // .sort(key = len) 길이 기준 정렬 // 문자열 나누기 참고하기!!
+멀쩡한 사각형 - math(floor, ceil, gcd) 사용 / 수학적 계산 필요..어렵
