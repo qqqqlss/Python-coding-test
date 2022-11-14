@@ -49,4 +49,5 @@ n^2 배열 자르기 - 좀더 쉽게 생각하자.
 카운트 다운 - 순서대로 차근차근 bfs, 생각이 중요하다. 너무 거져먹으려 하지 말자  
 숫자 카드 나누기 - gcd,lcm  
 과일 장수 --  
-행렬 연산 - deque appendleft,popleft이용 효율성up, rotate도 너무 O(k)라 너무 유용 duque 이용 잘하자!!!  
+행렬 연산 - deque appendleft,popleft이용 효율성up, rotate도 너무 O(k)라 너무 유용 duque 이용 잘하자!!! 
+성격 유형 검사히기 - dict사용 쉬움
