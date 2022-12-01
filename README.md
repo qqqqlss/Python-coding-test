@@ -49,3 +49,4 @@ n^2 배열 자르기 - 좀더 쉽게 생각하자.
 숫자 카드 나누기 - gcd,lcm
 과일 장수 --  
 행렬 연산 - deque appendleft,popleft이용 효율성up, rotate도 너무 O(k)라 너무 유용 duque 이용 잘하자!!!  
+귤 고르기 - Counter 사용, dict value기준 정렬

@@ -1,24 +1,27 @@
-import heapq
-def solution(n, times): # n 관람차 개수, times 이용객 이용하고 싶은 시간
-    idx=0
-    answer=[]
-    for i in range(1,n+1):
-        num=times.pop(0)
-        if num%n==0:
-            num+=i
-        else:
-            num=((num//n)+1)*n+i
-        heapq.heappush(answer, num)
-    while times:
-        num=times.pop(0)
-        if num%n==0:
-            num=(num//n)*n
-        else:
-            num=((num//n)+1)*n
-        num+=heapq.heappop(answer)
-        heapq.heappush(answer, num)
-    return max(answer)
+T = int(input())
 
-n=3
-times=[4,7,1,3,5,6,2]
-print(solution(n,times))
+for test_case in range(1, T + 1):
+	n, change = input().split()
+	n=list(n)
+	change= int(change)
+	idx=0
+	for _ in range(change):
+		print(n)
+		while True:
+			if idx>=len(n):
+				n[-1],n[-2]=n[-2],n[-1]
+				break
+			m=max(n[idx:])
+			if n[idx]==m:
+				idx+=1
+				continue
+			else:
+				for i in range(len(n)-1,-1):
+					if m==n[i]:
+						print(n[idx],n[i])
+						n[idx],n[i]=n[i],n[idx]
+						idx+=1
+						break
+				else:
+					break
+	print('#'+str(test_case), ''.join(map(str,n)))
