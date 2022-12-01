@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 T = int(input())
 
 for test_case in range(1, T + 1):
@@ -25,3 +26,9 @@ for test_case in range(1, T + 1):
 				else:
 					break
 	print('#'+str(test_case), ''.join(map(str,n)))
+=======
+
+
+
+print(solution())
+>>>>>>> 82af5a3f9637718e4ac0a62229687ec41e87f8dd
