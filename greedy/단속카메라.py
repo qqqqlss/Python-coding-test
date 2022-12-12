@@ -1,6 +1,4 @@
 def solution(routes):
-    for i in routes:
-        i.sort()
     routes.sort()
     answer=1
     point=routes[0][1]

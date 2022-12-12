@@ -1,7 +1,6 @@
 def solution(number, k):
     count=0
     idx=0
-    std=0
     while 1:
         if idx==len(number)-1:
             number=number[:idx]
