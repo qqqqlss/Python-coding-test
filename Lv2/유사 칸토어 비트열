@@ -1,0 +1,89 @@
+#제일 빠름
+def counter(count, n, index):
+    while True:
+        if n == 1:
+            if 1 <= index <= 2:
+                count += index
+            elif 4 <= index <= 5:
+                count += index - 1
+            elif index == 3:
+                count += 2
+            return count
+
+        n -= 1
+        padding_size = 5 ** n
+        one_count = 4 ** n
+        if index <= 2 * padding_size:
+            divisor = index // padding_size
+            reminder = index % padding_size
+            count += divisor * one_count
+            index = reminder
+        elif index > 3 * padding_size:
+            count += 2 * one_count
+            index -= 3 * padding_size
+            divisor = index // padding_size
+            reminder = index % padding_size
+            count += divisor * one_count
+            index = reminder
+        else:
+            count += 2 * one_count
+            index -= 2 * padding_size
+            return count
+
+def solution(n, l, r):
+    answer = 0
+    total_one = 4**n
+    total_size = 5**n
+
+    r_count = 0
+    r_n = n
+    r_index = r
+    r_count = counter(r_count, r_n, r_index)
+
+    l_count = 0
+    l_n = n
+    l_index = l - 1
+    l_count = counter(l_count, l_n, l_index)
+
+    return r_count - l_count
+
+
+####################################
+#더 간단 살짝 더 느림
+def solution(n, l, r):
+    def count_bit_1(num):
+        if num <= 5: return '11011'[:num].count('1')
+
+        base = 1
+        while 5 ** (base + 1) < num:
+            base += 1
+
+        section = num // (5 ** base)
+        remainder = num % (5 ** base)
+
+        answer = section * (4 ** base)
+
+        if section >= 3:
+            answer -= (4 ** base)
+
+        if section == 2:
+            return answer
+        else:
+            return answer + count_bit_1(remainder)
+
+    return count_bit_1(r) - count_bit_1(l - 1)
+
+####################################
+#단순 매우 느림
+def solution(n, l, r):
+    answer = r-l+1
+    for num in range(l-1,r):
+        while num>=1:
+            a,b=divmod(num,5)
+            if b==2 or a==2:
+                answer-=1
+                break
+            num=a
+
+
+    return answer
