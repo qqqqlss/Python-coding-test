@@ -1,7 +1,8 @@
 # 매우 빠름 dfs
-def combi(temp, number, calculate):
+def combi(temp, calculate):
     global result
-    if len(temp) == len(calculate):
+    number=len(temp)
+    if number == len(calculate):
         temp = set(temp)
         if temp not in result:
             result.append(temp)
@@ -10,8 +11,8 @@ def combi(temp, number, calculate):
         for j in range(len(calculate[number])):
             if calculate[number][j] not in temp:
                 temp.append(calculate[number][j])
-                combi(temp, number+1, calculate)
-                temp.pop()
+                combi(temp, calculate)
+                temp.pop()  # 백트래킹
 result = []
 def solution(user_id, banned_id):
     global result
@@ -22,15 +23,18 @@ def solution(user_id, banned_id):
             if len(ban) != len(user):
                 continue
             else:
-                count = 0
                 for i in range(len(ban)):
-                    if user[i] == ban[i]:
-                        count+=1
-                if count == len(ban)-ban.count('*'):
+                    if ban[i]=='*':
+                        continue
+                    elif user[i] == ban[i]:
+                        continue
+                    else:
+                        break
+                else:
                     possible.append(user)
         calculate.append(possible)
 
-    combi([], 0, calculate)
+    combi([], calculate)
     return len(result)
 
 ##################
