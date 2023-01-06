@@ -1,21 +1,28 @@
-def largestNumber(array):
-	if len(array)==1:
-		return str(array[0])
+from itertools import product
+def solution(user_id, banned_id):
+    bdict= []
+    answer=set()
+    for i in range(len(banned_id)):
+        tmp=[]
+        for j in range(len(user_id)):
+            if dif(user_id[j],banned_id[i]):
+                tmp.append(j)
+        bdict.append(tmp)
+    for a in set(product(*bdict)):
+        if len(set(a))==len(banned_id):
+            answer.add(','.join(sorted(list(a)))
+        print(answer)
+    return 1
 
-	for i in range(len(array)):
-		array[i]=str(array[i])
-
-	for i in range(len(array)):
-		for j in range(1+i,len(array)):
-			if array[j]+array[i]>array[i]+array[j]:
-				array[i],array[j]=array[j],array[i]
-
-	result=''.join(array)
-	
-	if(result=='0'*len(result)):
-		return '0'
-	else:
-		return result
-#main
-arr = [10, 68, 75, 7, 21, 12]
-print(largestNumber(arr))
+def dif(id1, bid):
+    if len(id1)!=len(bid):
+        return False
+    else:
+        for i in range(len(id1)):
+            if bid[i]=='*':
+                continue
+            if id1[i]==bid[i]:
+                continue
+            else:
+                return False
+    return True
