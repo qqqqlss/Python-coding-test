@@ -18,4 +18,5 @@ OX퀴즈 - 문자열 다루기(split, eval, replace)
 n의 배수 고르기 - 쉬움.  
 숫자 찾기 - 문자열 다루기(index, in)  
 배열의 유사도 - set(연산자, union), in 이용  
-배열 두배 만들기 - 쉬움.
+배열 두배 만들기 - 쉬움.  
+평행 - 쉬움, combinations사용하는 방법도 있음.
